@@ -1,0 +1,91 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%; /* White */
+  --foreground: 224 71.4% 4.1%; /* Dark Blue/Almost Black */
+
+  --muted: 220 14.3% 95.9%; /* Light Gray */
+  --muted-foreground: 220 8.9% 46.1%; /* Medium Gray */
+
+  --popover: 0 0% 100%; /* White */
+  --popover-foreground: 224 71.4% 4.1%; /* Dark Blue/Almost Black */
+
+  --card: 0 0% 100%; /* White */
+  --card-foreground: 224 71.4% 4.1%; /* Dark Blue/Almost Black */
+  
+  --border: 220 13% 91%; /* Light Gray Border */
+  --input: 220 13% 91%; /* Light Gray Input Border */
+
+  --primary: 150 70% 45%; /* Vibrant Green */
+  --primary-foreground: 0 0% 100%; /* White */
+
+  --secondary: 35 92% 60%; /* Warm Orange */
+  --secondary-foreground: 224 71.4% 4.1%; /* Dark Blue/Almost Black */
+
+  --accent: 210 40% 96.1%; /* Light Blueish Gray */
+  --accent-foreground: 224 71.4% 4.1%; /* Dark Blue/Almost Black */
+
+  --destructive: 0 84.2% 60.2%; /* Red */
+  --destructive-foreground: 0 0% 100%; /* White */
+
+  --ring: 150 70% 45%; /* Vibrant Green for focus rings */
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 224 71.4% 4.1%;
+  --foreground: 210 20% 98%;
+
+  --muted: 215 27.9% 16.9%;
+  --muted-foreground: 217.9 10.6% 64.9%;
+
+  --popover: 224 71.4% 4.1%;
+  --popover-foreground: 210 20% 98%;
+  
+  --card: 224 71.4% 4.1%;
+  --card-foreground: 210 20% 98%;
+
+  --border: 215 27.9% 16.9%;
+  --input: 215 27.9% 16.9%;
+
+  --primary: 150 65% 50%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 35 85% 65%;
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 215 27.9% 16.9%;
+  --accent-foreground: 210 20% 98%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 100%;
+
+  --ring: 150 65% 50%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glassmorphism {
+  background: rgba(30, 41, 59, 0.2); /* Example dark mode glass */
+  border: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
